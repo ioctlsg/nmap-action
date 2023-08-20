@@ -12,7 +12,7 @@ jobs:
     name: Unit tests
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - run: npm ci
     - run: npm audit
     - run: npm test
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Locally
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         if: ${{ env.ACT }}
         with:
           path: "nmap-action"
@@ -33,7 +33,7 @@ jobs:
       - name: scan scanme.nmap.org
         uses: ./
         with:
-          host: localhost
+          host: scanme.map.org
           raw: false
           withVulnerabilities: true
           outputDir: 'output'
