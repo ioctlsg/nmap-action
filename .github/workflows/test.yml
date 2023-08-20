@@ -33,7 +33,7 @@ jobs:
       - name: scan scanme.nmap.org
         uses: ./
         with:
-          host: scanme.nmap.org
+          host: localhost
           raw: false
           withVulnerabilities: true
           outputDir: 'output'
