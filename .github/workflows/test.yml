@@ -28,7 +28,7 @@ jobs:
         with:
           path: "nmap-action"
       - name: Checkout Github
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         if: ${{ !env.ACT }}
       - name: scan scanme.nmap.org
         uses: ./
@@ -38,7 +38,7 @@ jobs:
           withVulnerabilities: true
           outputDir: 'output'
           outputFile: 'nmapvuln.json'
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           path: output/nmapvuln.json
           name: nmapvuln
